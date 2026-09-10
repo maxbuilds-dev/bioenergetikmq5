@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Platzhalter für Foto des MERA Q5 Geräts">
+  <rect width="800" height="800" fill="#f2ebdd"/>
+  <rect x="24" y="24" width="752" height="752" fill="none" stroke="#a9823f" stroke-width="1.5" stroke-dasharray="10 8"/>
+  <g transform="translate(400,380)" fill="none" stroke="#a9823f" stroke-width="2.5">
+    <rect x="-90" y="-120" width="180" height="240" rx="18"/>
+    <circle cx="0" cy="-40" r="34"/>
+    <path d="M -55 40 Q 0 10 55 40" />
+    <path d="M -55 70 Q 0 40 55 70" />
+    <path d="M -55 100 Q 0 70 55 100" />
+  </g>
+  <text x="400" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#2a2420">Gerätefoto MERA Q5 folgt</text>
+  <text x="400" y="590" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#a9823f" letter-spacing="1.5">PLATZHALTER · QUADRATISCH 1:1</text>
+</svg>
