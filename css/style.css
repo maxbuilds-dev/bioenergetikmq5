@@ -278,7 +278,7 @@ h2.section-title {
 }
 
 /* Mobile nav (checkbox hack, no JS) */
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
   .nav-links {
     position: fixed;
     top: var(--nav-height);
@@ -339,7 +339,7 @@ h2.section-title {
   }
 }
 
-@media (min-width: 861px) {
+@media (min-width: 1025px) {
   .nav-toggle-label {
     display: none;
   }
@@ -459,9 +459,14 @@ h2.section-title {
   margin: 0 auto;
 }
 
-.split-text .lede {
+.lede {
   font-size: 1.05rem;
   color: var(--color-text-soft);
+}
+
+.text-block {
+  max-width: 68ch;
+  margin-top: 24px;
 }
 
 .fact-list {
