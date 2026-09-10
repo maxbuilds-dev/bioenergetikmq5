@@ -118,6 +118,13 @@ h2.section-title {
   margin: 28px 0;
 }
 
+.divider-gold-sm {
+  width: 32px;
+  height: 1px;
+  opacity: 0.6;
+  margin: 24px 0;
+}
+
 /* ---------- Buttons ---------- */
 
 .btn {
