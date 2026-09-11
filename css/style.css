@@ -379,7 +379,8 @@ h2.section-title {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 72px 0 88px;
+  padding-top: 72px;
+  padding-bottom: 88px;
 }
 
 .hero-hook {
