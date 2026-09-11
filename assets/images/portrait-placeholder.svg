@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-label="Platzhalter für Portraitfoto von Elke Bund">
+  <rect width="600" height="800" fill="#f2ebdd"/>
+  <rect x="24" y="24" width="552" height="752" fill="none" stroke="#a9823f" stroke-width="1.5" stroke-dasharray="10 8"/>
+  <g transform="translate(300,340)" fill="none" stroke="#a9823f" stroke-width="2.5">
+    <circle cx="0" cy="-30" r="46"/>
+    <path d="M -90 110 C -90 30 90 30 90 110" />
+  </g>
+  <text x="300" y="470" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#2a2420">Portraitfoto folgt</text>
+  <text x="300" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#a9823f" letter-spacing="1.5">PLATZHALTER · HOCHFORMAT 3:4</text>
+</svg>
