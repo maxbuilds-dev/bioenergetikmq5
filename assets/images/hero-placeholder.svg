@@ -6,12 +6,14 @@
     </linearGradient>
   </defs>
   <rect width="1600" height="900" fill="url(#heroBg)"/>
-  <rect x="40" y="40" width="1520" height="820" fill="none" stroke="#c9a868" stroke-width="1.5" stroke-dasharray="10 8"/>
-  <g transform="translate(800,400)" fill="none" stroke="#c9a868" stroke-width="2.5">
-    <rect x="-56" y="-40" width="112" height="80" rx="8"/>
-    <circle cx="0" cy="0" r="26"/>
-    <rect x="24" y="-56" width="26" height="16" rx="3"/>
+  <rect x="40" y="40" width="1520" height="820" fill="none" stroke="#c9a868" stroke-width="1.5" stroke-dasharray="10 8" opacity="0.5"/>
+  <g opacity="0.35">
+    <g transform="translate(800,110)" fill="none" stroke="#c9a868" stroke-width="2.5">
+      <rect x="-38" y="-28" width="76" height="56" rx="6"/>
+      <circle cx="0" cy="0" r="17"/>
+      <rect x="16" y="-39" width="18" height="11" rx="2"/>
+    </g>
+    <text x="800" y="168" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#f6f1e6" letter-spacing="1">Hero-Bild folgt</text>
+    <text x="800" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#c9a868" letter-spacing="2">PLATZHALTER · QUERFORMAT 1600×900</text>
   </g>
-  <text x="800" y="486" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#f6f1e6" letter-spacing="1">Hero-Bild folgt</text>
-  <text x="800" y="522" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#c9a868" letter-spacing="2">PLATZHALTER · QUERFORMAT 1600×900</text>
 </svg>
