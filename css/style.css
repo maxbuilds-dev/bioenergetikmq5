@@ -51,6 +51,30 @@ a {
   color: inherit;
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Link für Tastatur-Nutzer, springt direkt zum Inhalt */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-gold);
+  color: var(--color-cream);
+  padding: 12px 20px;
+  z-index: 200;
+  border-radius: 0 0 4px 0;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
 h1, h2, h3, h4 {
   font-family: var(--font-head);
   font-weight: 600;
@@ -574,6 +598,24 @@ h2.section-title {
   color: var(--color-dark);
 }
 
+.small-note {
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+  margin-top: 18px;
+}
+
+.focus-block {
+  margin-top: 56px;
+}
+
+.focus-block h3 {
+  font-size: 1.3rem;
+}
+
+.contact .section-lede {
+  color: rgba(246, 241, 230, 0.78);
+}
+
 /* ---------- Pricing ---------- */
 
 .pricing {
@@ -714,6 +756,14 @@ h2.section-title {
   filter: grayscale(0.15) contrast(1.05);
 }
 
+.map-frame .einbettung {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border: 0;
+  background: transparent;
+}
+
 .site-footer-bottom {
   border-top: 1px solid rgba(246, 241, 230, 0.15);
   margin-top: 72px;
@@ -742,6 +792,327 @@ h2.section-title {
 
 .legal-links a:hover {
   color: var(--color-gold-light);
+}
+
+/* Schaltflaeche in der Fusszeile, sieht aus wie die Links daneben */
+.footer-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: rgba(246, 241, 230, 0.65);
+  cursor: pointer;
+  text-align: left;
+}
+
+.footer-btn:hover {
+  color: var(--color-gold-light);
+}
+
+/* ---------- Zustimmungsmanager ----------
+   Alle Schaltflaechen sind absichtlich gleich gross, gleich gefaerbt und
+   gleich stark hervorgehoben. Ablehnen muss genauso leicht fallen wie
+   Zustimmen, ein hervorgehobener Akzeptieren-Knopf neben einem blassen
+   Ablehnen-Knopf waere unzulaessige Beeinflussung. */
+
+.cc-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(20, 16, 12, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.cc-overlay[hidden] {
+  display: none;
+}
+
+body.cc-offen {
+  overflow: hidden;
+}
+
+.cc-dialog {
+  width: 100%;
+  max-width: 540px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: var(--color-cream);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: clamp(24px, 4vw, 34px);
+  box-shadow: 0 30px 80px rgba(20, 16, 12, 0.35);
+}
+
+.cc-titel {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+}
+
+.cc-view[hidden] {
+  display: none;
+}
+
+.cc-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-text-soft);
+}
+
+.cc-text + .cc-text {
+  margin-top: 12px;
+}
+
+.cc-actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.cc-btn {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 2px;
+  cursor: pointer;
+  color: var(--color-dark);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.cc-btn:hover {
+  border-color: var(--color-gold);
+  background: var(--color-bg-alt);
+}
+
+.cc-btn-klein {
+  width: auto;
+  font-size: 0.85rem;
+  padding: 9px 18px;
+  margin-top: 14px;
+}
+
+.cc-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 0.82rem;
+}
+
+.cc-links a {
+  color: var(--color-text-soft);
+  text-decoration: underline;
+}
+
+.cc-links a:hover {
+  color: var(--color-dark);
+}
+
+.cc-kategorien {
+  display: grid;
+  gap: 14px;
+}
+
+.cc-kat {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  padding: 16px 18px;
+}
+
+.cc-kat-kopf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.cc-kat-titel {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.cc-pflicht {
+  display: inline-block;
+  font-size: 0.72rem;
+  color: var(--color-text-soft);
+  margin-top: 4px;
+}
+
+.cc-kat-zweck {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--color-text-soft);
+  margin-top: 8px;
+}
+
+.cc-eintrag {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 8px 12px;
+  align-items: start;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+
+.cc-eintrag code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.76rem;
+  color: var(--color-gold);
+  background: var(--color-bg-alt);
+  border-radius: 3px;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+
+.cc-eintrag p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-text-soft);
+  margin: 0;
+}
+
+.cc-dauer {
+  font-size: 0.76rem;
+  color: var(--color-text-soft);
+  white-space: nowrap;
+}
+
+/* Schiebeschalter. Die Box bleibt ein echtes Eingabefeld und ist deshalb
+   mit der Tastatur bedienbar, sie wird nur unsichtbar darübergelegt. */
+.cc-schalter {
+  position: relative;
+  flex-shrink: 0;
+  width: 44px;
+  height: 25px;
+}
+
+.cc-schalter input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.cc-schalter input:disabled {
+  cursor: default;
+}
+
+.cc-regler {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--color-border);
+  transition: background 0.2s ease;
+  pointer-events: none;
+}
+
+.cc-regler::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--color-cream);
+  transition: transform 0.2s ease;
+}
+
+.cc-schalter input:checked + .cc-regler {
+  background: var(--color-gold);
+}
+
+.cc-schalter input:checked + .cc-regler::after {
+  transform: translateX(19px);
+}
+
+.cc-schalter input:disabled + .cc-regler {
+  opacity: 0.55;
+}
+
+.cc-schalter input:focus-visible + .cc-regler {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+@media (min-width: 480px) {
+  .cc-actions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cc-btn {
+    padding-inline: 12px;
+  }
+}
+
+/* ---------- Eingebettete Inhalte, solange sie blockiert sind ----------
+   Der Platzhalter laedt nichts nach. Bewusst kein Kartenausschnitt von
+   Google als Vorschau: das waere bereits die Verbindung, die die
+   Zustimmung verhindern soll. Deshalb nur ein gezeichnetes Symbol. */
+
+.einbettung {
+  position: relative;
+  display: grid;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  background: var(--color-bg-alt);
+}
+
+.einbettung iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.einbettung-platzhalter {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 8px;
+  text-align: center;
+  padding: 24px;
+}
+
+.einbettung-platzhalter[hidden] {
+  display: none;
+}
+
+.einbettung-platzhalter svg {
+  width: 40px;
+  height: 40px;
+  color: var(--color-gold);
+  opacity: 0.8;
+}
+
+.einbettung-platzhalter span {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  color: var(--color-cream);
+}
+
+.einbettung-platzhalter small {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(246, 241, 230, 0.65);
+  max-width: 40ch;
 }
 
 /* ---------- Placeholder image blocks ---------- */

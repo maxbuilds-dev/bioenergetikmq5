@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Datenschutz | Elke Bund, Bioenergetik: MERA Q5 &amp; IMEDIS Bioresonanz</title>
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -49,18 +49,49 @@
     <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von GitHub</a>.
   </p>
 
-  <h2>Cookies &amp; Tracking</h2>
+  <h2>Cookies</h2>
   <p>
-    Diese Website verwendet keine eigenen Cookies und keine Analyse- oder Tracking-Tools (z. B. Google Analytics).
+    Diese Website setzt keine Cookies für Werbung, Statistik oder Tracking. Beim ersten Aufruf erscheint eine
+    Abfrage mit drei gleichwertigen Schaltflächen: Einstellungen, Alle ablehnen und Alle akzeptieren.
+  </p>
+  <p>
+    Gespeichert wird ein einziger Cookie mit dem Namen <em>zustimmung</em>. Er enthält das Datum Ihrer
+    Entscheidung, die Fassung der Abfrage und für jede Kategorie den Wert wahr oder falsch, zum Beispiel
+    <em>{"v":1,"zeit":"2026-01-01","notwendig":true,"maps":false}</em>.
+  </p>
+  <p>
+    Er läuft nach einem Jahr ab, wird mit <em>SameSite=Lax</em> gesetzt und enthält keine Kennung, mit der Sie
+    wiedererkannt werden könnten. Er wird auch dann gespeichert, wenn Sie ablehnen, denn nur so lässt sich Ihre
+    Ablehnung berücksichtigen. Rechtsgrundlage ist § 165 Abs. 3 TKG 2021, weil die Speicherung für die von Ihnen
+    gewünschte Einstellung unbedingt erforderlich ist.
+  </p>
+  <p>
+    Sie können Ihre Entscheidung jederzeit ändern. Am Ende der Startseite finden Sie dafür die Schaltfläche
+    „Cookie-Einstellungen“. Ein Widerruf ist damit genauso einfach wie die Zustimmung.
   </p>
 
   <h2>Google Maps</h2>
   <p>
-    Im Bereich „Kontakt“ binde ich eine Karte des Dienstes Google Maps ein, um Ihnen die Anfahrt zu erleichtern.
-    Beim Aufruf dieser Kartenansicht wird eine Verbindung zu Servern von Google LLC, 1600 Amphitheatre Parkway,
-    Mountain View, CA 94043, USA, hergestellt, wobei Ihre IP-Adresse an Google übertragen werden kann. Nähere
-    Informationen finden Sie in der
-    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Google</a>.
+    Im Bereich „Kontakt“ kann eine Karte des Dienstes Google Maps eingeblendet werden. Anbieter ist Google
+    Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.
+  </p>
+  <p>
+    <strong>Ohne Ihre Freigabe wird diese Verbindung nicht aufgebaut.</strong> Solange Sie die Kategorie
+    „Google Maps“ nicht aktiviert haben, steht an dieser Stelle nur ein Platzhalter, und es wird nichts von
+    Google angefordert.
+  </p>
+  <p>
+    Geben Sie die Karte frei, erfährt Google die Adresse Ihres Internetanschlusses, Datum und Uhrzeit sowie
+    Angaben zu Ihrem Browser und setzt eigene Cookies. Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1
+    lit. a DSGVO. Sie können sie jederzeit über „Cookie-Einstellungen“ am Seitenende widerrufen, die Karte wird
+    dann sofort wieder entfernt. Näheres bei Google:
+    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.
+  </p>
+
+  <h2>Schriftarten</h2>
+  <p>
+    Die verwendeten Schriftarten liegen direkt auf diesem Server und werden von dort geladen. Es besteht keine
+    Verbindung zu Google Fonts oder einem anderen externen Anbieter.
   </p>
 
   <h2>Kontaktaufnahme</h2>
@@ -91,5 +122,6 @@
   <p>Diese Datenschutzerklärung wurde zuletzt im September 2026 aktualisiert.</p>
 </div>
 
+<script src="js/script.js"></script>
 </body>
 </html>

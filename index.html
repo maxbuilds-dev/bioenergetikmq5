@@ -3,15 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SICHERHEIT: Content Security Policy. Die Seite laedt ausschliesslich
+     Dateien von sich selbst. GitHub Pages kann keine echten HTTP-Header
+     senden, deshalb als meta-Tag. FOLGE FUER DIE ARBEIT: style="..." im
+     HTML und <script> Bloecke im HTML werden stillschweigend blockiert.
+     Neues CSS gehoert nach css/style.css, neues JavaScript nach js/script.js.
+     frame-src erlaubt ausschliesslich Google Maps, und auch das nur fuer
+     den iframe, den js/script.js erst nach der Zustimmung erzeugt. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; frame-src https://www.google.com; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
 <title>Elke Bund, Bioenergetik: MERA Q5 &amp; IMEDIS Bioresonanz | Deutschlandsberg</title>
 <meta name="description" content="Bioenergetische Anwendungen mit der MERA Q5 und der IMEDIS-Bioresonanz bei Elke Bund in Deutschlandsberg, einzeln oder miteinander kombiniert.">
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<!-- Schriften liegen selbst im Repo (assets/fonts/), nie ueber das Google-
+     Fonts-CDN: das wuerde die IP-Adresse jedes Besuchers an Google
+     uebertragen, noch bevor eine Cookie-Entscheidung moeglich ist. -->
+<link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
 <nav class="site-nav">
   <div class="nav-inner">
@@ -52,7 +66,7 @@
   </div>
 </header>
 
-<main>
+<main id="inhalt">
 
   <section id="ueber-mich">
     <div class="container split">
@@ -126,7 +140,7 @@
           <li><span class="dot"></span><span><strong>Zertifiziertes</strong> Wellness-Gerät</span></li>
           <li><span class="dot"></span><span><strong>Anwendung:</strong> nicht-invasiv, bekleidet, im stehen/sitzen</span></li>
         </ul>
-        <p style="font-size:0.85rem;color:var(--color-text-soft);margin-top:18px;">
+        <p class="small-note">
           Die MERA Q5 dient der Entspannung und dem allgemeinen Wohlbefinden. Sie ersetzt keine medizinische
           Diagnose oder Behandlung.
         </p>
@@ -163,7 +177,7 @@
           <li><span class="dot"></span><span><strong>Komplementärmedizinisches</strong> Verfahren</span></li>
           <li><span class="dot"></span><span><strong>Anwendung:</strong> nicht-invasiv, über Elektroden an Händen, Füßen und Stirn</span></li>
         </ul>
-        <p style="font-size:0.85rem;color:var(--color-text-soft);margin-top:18px;">
+        <p class="small-note">
           <em>Die IMEDIS-Methode stellt keine Diagnose und keine Behandlung im schulmedizinischen Sinne dar.</em>
         </p>
       </div>
@@ -198,8 +212,8 @@
         </div>
       </div>
 
-      <div style="margin-top:56px;">
-        <h3 style="font-size:1.3rem;">Mögliche Schwerpunkte</h3>
+      <div class="focus-block">
+        <h3>Mögliche Schwerpunkte</h3>
         <div class="tag-grid">
           <span class="tag">Entspannung &amp; Stressabbau</span>
           <span class="tag">Unterstützung der Regeneration</span>
@@ -233,7 +247,7 @@
     <div class="container">
       <span class="eyebrow">Kontakt</span>
       <h2 class="section-title">Vereinbaren Sie Ihren Termin</h2>
-      <p class="section-lede" style="color:rgba(246,241,230,0.78);">
+      <p class="section-lede">
         Ich freue mich auf Ihre Nachricht oder Ihren Anruf. Termine vergebe ich telefonisch nach Vereinbarung.
       </p>
 
@@ -250,7 +264,7 @@
             </div>
             <div>
               <dt>E-Mail</dt>
-              <dd><a href="mailto:office@bioenergetik-mq5.at">office@bioenergetik-mq5.at</a></dd>
+              <dd><a href="#kontakt" data-mail="office" data-domain="bioenergetik-mq5.at"><span class="mail-text">office (at) bioenergetik-mq5.at</span></a></dd>
             </div>
             <div>
               <dt>Öffnungszeiten</dt>
@@ -260,7 +274,7 @@
 
           <div class="contact-cta">
             <a href="tel:+436649190900" class="btn btn-gold">Jetzt anrufen</a>
-            <a href="mailto:office@bioenergetik-mq5.at" class="btn btn-outline">E-Mail schreiben</a>
+            <a href="#kontakt" data-mail="office" data-domain="bioenergetik-mq5.at" class="btn btn-outline">E-Mail schreiben</a>
           </div>
 
           <div class="social-row">
@@ -271,12 +285,20 @@
         </div>
 
         <div class="map-frame">
-          <iframe
-            src="https://www.google.com/maps?q=Alfred-Co%C3%9Fmannweg+8a,+8530+Deutschlandsberg,+%C3%96sterreich&output=embed"
-            title="Standort: Alfred-Coßmannweg 8a, 8530 Deutschlandsberg"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+          <div class="einbettung"
+               data-kategorie="maps"
+               data-titel="Karte mit dem Standort: Alfred-Coßmannweg 8a, 8530 Deutschlandsberg"
+               data-src="https://www.google.com/maps?q=Alfred-Co%C3%9Fmannweg+8a,+8530+Deutschlandsberg,+%C3%96sterreich&amp;output=embed">
+            <div class="einbettung-platzhalter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Karte</span>
+              <small>Die Karte wird von Google geladen. Dabei erfährt Google die Adresse Ihres Internetanschlusses.</small>
+              <button type="button" class="cc-btn cc-btn-klein" data-freigeben="maps">Karte laden</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -285,6 +307,7 @@
         <ul class="legal-links">
           <li><a href="impressum.html">Impressum</a></li>
           <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><button type="button" class="footer-btn" id="ccOeffnen">Cookie-Einstellungen</button></li>
         </ul>
       </div>
     </div>
@@ -292,5 +315,43 @@
 
 </main>
 
+<!-- ===== ZUSTIMMUNGSMANAGER =====
+     Zwei Ansichten in einem Dialog. Die Kategorien stehen in js/script.js
+     als Datenstruktur und werden dort erweitert, nicht hier im HTML. -->
+<div class="cc-overlay" id="ccOverlay" hidden>
+  <div class="cc-dialog" role="dialog" aria-modal="true" aria-labelledby="ccTitel" id="ccDialog">
+
+    <h2 class="cc-titel" id="ccTitel">Cookies und externe Inhalte</h2>
+
+    <div class="cc-view" id="ccKurz">
+      <p class="cc-text">
+        Diese Website benötigt einen einzigen Cookie, der Ihre Entscheidung
+        auf dieser Seite speichert. Darüber hinaus werden keine Cookies für
+        Werbung, Statistik oder Tracking gesetzt.
+      </p>
+      <div class="cc-actions">
+        <button type="button" class="cc-btn" id="ccEinstellungen">Einstellungen</button>
+        <button type="button" class="cc-btn" id="ccAblehnen">Alle ablehnen</button>
+        <button type="button" class="cc-btn" id="ccAnnehmen">Alle akzeptieren</button>
+      </div>
+    </div>
+
+    <div class="cc-view" id="ccDetail" hidden>
+      <div class="cc-kategorien" id="ccKategorien"></div>
+      <div class="cc-actions">
+        <button type="button" class="cc-btn" id="ccZurueck">Zurück</button>
+        <button type="button" class="cc-btn" id="ccSpeichern">Auswahl speichern</button>
+        <button type="button" class="cc-btn" id="ccAnnehmen2">Alle akzeptieren</button>
+      </div>
+    </div>
+
+    <p class="cc-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </p>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
 </body>
 </html>
