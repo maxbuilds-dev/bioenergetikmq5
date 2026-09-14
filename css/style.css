@@ -413,10 +413,27 @@ h2.section-title {
   align-items: center;
 }
 
+.split-media {
+  position: relative;
+  order: 2;
+}
+
+.split-text {
+  order: 1;
+}
+
 @media (min-width: 900px) {
   .split {
     grid-template-columns: 0.85fr 1.15fr;
     gap: 72px;
+  }
+
+  .split-media {
+    order: 1;
+  }
+
+  .split-text {
+    order: 2;
   }
 
   .split.reverse .split-media {
@@ -426,10 +443,6 @@ h2.section-title {
   .split.reverse .split-text {
     order: 1;
   }
-}
-
-.split-media {
-  position: relative;
 }
 
 .split-media .img-frame {
